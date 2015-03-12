@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>picket2</groupId>
+  <artifactId>picket2</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+ 
+  <name>First PicketLink CDI Application</name>
+  <description>Tutorial about how to secure a simple application using PicketLink.</description>
+ <properties>
+  <version.picketlink.javaee.bom>2.7.0.Final</version.picketlink.javaee.bom>
+</properties>
+ 
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.picketlink</groupId>
+      <artifactId>picketlink-javaee-6.0</artifactId>
+      <type>pom</type>
+      <scope>import</scope>
+      <version>${version.picketlink.javaee.bom}</version>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+ 
+<dependencies>
+  <!-- PicketLink Dependency -->
+  <dependency>
+    <groupId>org.picketlink</groupId>
+    <artifactId>picketlink</artifactId>
+    <scope>compile</scope>
+  </dependency>
+ 
+  <!-- CDI API Dependency -->
+  <dependency>
+      <groupId>javax.enterprise</groupId>
+      <artifactId>cdi-api</artifactId>
+      <scope>provided</scope>
+  </dependency>
+</dependencies>
+  <build>
+    <finalName>picket2</finalName>
+  </build>
+</project>
